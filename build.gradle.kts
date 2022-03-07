@@ -23,10 +23,6 @@ dependencies {
 }
 
 tasks.jar {
-    from(embed.map { if(it.isDirectory) it else zipTree(it) }){
-        exclude("**/module-info.class")
-    }
-
     manifest {
         attributes["Agent-Class"] = "me.onils.lunarenable.Agent"
         attributes["Premain-Class"] = "me.onils.lunarenable.Agent"
